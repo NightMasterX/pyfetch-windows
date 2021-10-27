@@ -2,7 +2,6 @@
 
 import os
 import time
-import ctypes
 import psutil
 import cpuinfo
 import getpass
