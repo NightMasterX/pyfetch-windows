@@ -85,7 +85,7 @@ print(colored(f"        ...,,+:;  cllllllllllllllllll   ", 'blue') + underscore_
 print(colored(f"  ,cclllllllllll  lllllllllllllllllll   ", 'blue') + f"OS: " + platform.system() + f" {cpu_info['arch']}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Host: " + ' '.join(hostcmd))
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Kernel: " + " ".join(kexeccmd))
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Uptime: {uptime(0)}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Uptime: {uptime()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Resolution: {size_tuple[0]}x{size_tuple[1]}")
 print("                                        " + f"Terminal: {terminal()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"CPU: {cpu_info['brand_raw']}")
