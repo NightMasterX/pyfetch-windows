@@ -1,6 +1,8 @@
 # pyfetch - a neofetch fork in python
 [neofetch](https://github.com/dylanaraps/neofetch) in Python for Windows<br>
 
+<img src= https://cdn.discordapp.com/attachments/532165821955440641/903123418541596682/unknown.png>
+
 How to run the script? Make sure you have Python 3.9+ and Just run the commands in order:<br>
 1: `git clone https://github.com/NightMasterX/pyfetch-windows.git`<br>
 2: `pip install -r requirements.txt`<br>
