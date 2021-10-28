@@ -87,7 +87,7 @@ print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Host: " +
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Kernel: " + " ".join(kexeccmd))
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Uptime: {uptime()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Resolution: {size_tuple[0]}x{size_tuple[1]}")
-print("                                        " + f"Terminal: {terminal()}")
+print(colored(f"                                        ") + f"Terminal: {terminal()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"CPU: {cpu_info['brand_raw']}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + "GPU: " + " ".join(gpu_data))
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"RAM: {round(aram)} /  {round(tram)}MiB")
