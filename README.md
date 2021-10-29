@@ -1,4 +1,4 @@
-# pyfetch - a neofetch fork in python
+# pyfetch - a customizable neofetch fork in python
 [neofetch](https://github.com/dylanaraps/neofetch) in Python for Windows<br>
 
 <img src= https://cdn.discordapp.com/attachments/532165821955440641/903123418541596682/unknown.png>
