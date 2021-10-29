@@ -2,12 +2,18 @@
 
 import os
 import time
-import psutil
-import cpuinfo
+import json
 import getpass
 import platform
+import psutil, cpuinfo
 from termcolor import colored
 from colorama import init; init()
+
+config = open("config.json")
+data = json.load(config)
+titleColor = data["titleColor"]
+infoColor = data["infoColor"]
+logoColor = data["logoColor"]
 
 # Uptime Credits to: AlexFlipnote's neofetch-win
 def uptime():
@@ -34,7 +40,6 @@ def uptime():
             output = f"{m} and {s}"
         else:
             output = s
-
         return output
 
 
@@ -80,21 +85,21 @@ tram = ram[0] / 1024 ** 2
 aram = ram[4] / 1024 ** 2
 
 
-print(colored(f"                                  ..,", 'blue'))
-print(colored(f"                      ....,,:;+ccllll   ",'blue') + fullname)
-print(colored(f"        ...,,+:;  cllllllllllllllllll   ", 'blue') + underscore_list[0])
-print(colored(f"  ,cclllllllllll  lllllllllllllllllll   ", 'blue') + f"OS: " + platform.system() + f" {cpu_info['arch']}")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Host: " + ' '.join(hostcmd))
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Kernel: " + " ".join(kexeccmd))
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Uptime: {uptime()}")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Shell: Python {platform.python_version()}")
-print(colored(f"                                        ") + f"Resolution: {size_tuple[0]}x{size_tuple[1]}")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"Terminal: {terminal()}")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"CPU: {cpu_info['brand_raw']}")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + "GPU: " + " ".join(gpu_data))
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue') + f"RAM: {round(aram)} /  {round(tram)}MiB")
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", 'blue'))
-print(colored(f"  `'ccllllllllll  lllllllllllllllllll   ", 'blue'))
-print(colored(f"           `'""*::  :ccllllllllllllllll ", 'blue'))
-print(colored(f'                          ````''"*::cll ', 'blue'))
-print(colored(f"                                   ``", 'blue'))
+print(colored(f"                                  ..,", f'{logoColor}'))
+print(colored(f"                      ....,,:;+ccllll   ",f'{logoColor}') + colored(username, f'{titleColor}') + "@" + colored(computername, f'{titleColor}'))
+print(colored(f"        ...,,+:;  cllllllllllllllllll   ", f'{logoColor}') + underscore_list[0])
+print(colored(f"  ,cclllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("OS: ", f'{titleColor}') + platform.system() + f" {cpu_info['arch']}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Host: ", f'{titleColor}') + ' '.join(hostcmd))
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Kernel: ", f'{titleColor}') + " ".join(kexeccmd))
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Uptime: ", f'{titleColor}') + f"{uptime()}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Shell: ", f"{titleColor}") + f"Python {platform.python_version()}")
+print(colored(f"                                        ") + colored("Resolution: ", f"{titleColor}") + f"{size_tuple[0]}x{size_tuple[1]}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Terminal: ", f'{titleColor}') + f"{terminal()}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("CPU: ", f'{titleColor}') + f"{cpu_info['brand_raw']}")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("GPU: ", f'{titleColor}') + " ".join(gpu_data))
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored(f"RAM: ", f'{titleColor}') + f"{round(aram)} /  {round(tram)}MiB")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}'))
+print(colored(f"  `'ccllllllllll  lllllllllllllllllll   ", f'{logoColor}'))
+print(colored(f"           `'""*::  :ccllllllllllllllll ", f'{logoColor}'))
+print(colored(f'                          ````''"*::cll ', f'{logoColor}'))
+print(colored(f"                                   ``", f'{logoColor}'))
