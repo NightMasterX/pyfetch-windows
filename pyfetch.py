@@ -11,9 +11,9 @@ from colorama import init; init()
 
 config = open("config.json")
 data = json.load(config)
-titleColor = data["titleColor"]
-infoColor = data["infoColor"]
-logoColor = data["logoColor"]
+titleColor = data["colors"]["titleColor"]
+infoColor = data["colors"]["infoColor"]
+logoColor = data["colors"]["logoColor"]
 
 # Uptime Credits to: AlexFlipnote's neofetch-win
 def uptime():
@@ -81,9 +81,14 @@ gpu_data.remove("Name")
 
 # RAM Usage
 ram = psutil.virtual_memory()
-tram = ram[0] / 1024 ** 2
-aram = ram[4] / 1024 ** 2
+MeasureOfMemory = data["config"]["MeasureOfMemory"]
 
+if MeasureOfMemory == "gb":
+    tram = ram[0] / 1024 ** 2 / 1000
+    aram = ram[4] / 1024 ** 2 / 1000
+elif MeasureOfMemory == "mb":
+    tram = ram[0] / 1024 ** 2
+    aram = ram[4] / 1024 ** 2
 
 print(colored(f"                                  ..,", f'{logoColor}'))
 print(colored(f"                      ....,,:;+ccllll   ",f'{logoColor}') + colored(username, f'{titleColor}') + "@" + colored(computername, f'{titleColor}'))
@@ -97,7 +102,7 @@ print(colored(f"                                        ") + colored("Resolution
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("Terminal: ", f'{titleColor}') + f"{terminal()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("CPU: ", f'{titleColor}') + f"{cpu_info['brand_raw']}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored("GPU: ", f'{titleColor}') + " ".join(gpu_data))
-print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored(f"RAM: ", f'{titleColor}') + f"{round(aram)} /  {round(tram)}MiB")
+print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}') + colored(f"RAM: ", f'{titleColor}') + f"{round(aram)} / {round(tram)}{MeasureOfMemory.upper()}")
 print(colored(f"  llllllllllllll  lllllllllllllllllll   ", f'{logoColor}'))
 print(colored(f"  `'ccllllllllll  lllllllllllllllllll   ", f'{logoColor}'))
 print(colored(f"           `'""*::  :ccllllllllllllllll ", f'{logoColor}'))
