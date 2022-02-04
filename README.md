@@ -4,7 +4,7 @@
 <img src= https://cdn.discordapp.com/attachments/532165821955440641/903123418541596682/unknown.png>
 
 How to run the script? Make sure you have Python 3.9+ and Just run the commands in order:<br>
-1: Go to releases and Download config.json and pyfetch.py (or a .zip)
+1: Go to releases and Download config.json and pyfetch.py (or a .zip)<br>
 2: `pip install -r requirements.txt`<br>
 3: `python pyfetch.py`<br>
 
