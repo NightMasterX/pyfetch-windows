@@ -45,7 +45,7 @@ def uptime():
 
 cpu_info = (cpuinfo.get_cpu_info()) # Tuple
 
-# Computer & Username + Underscor
+# Computer & Username + Underscores
 username = getpass.getuser()
 computername = platform.node()
 fullname = username + "@" + computername
@@ -82,11 +82,10 @@ gpu_data.remove("Name")
 # RAM Usage
 ram = psutil.virtual_memory()
 MeasureOfMemory = data["config"]["MeasureOfMemory"]
-
-if MeasureOfMemory == "gb":
+if MeasureOfMemory.lower() == "gb":
     tram = ram[0] / 1024 ** 2 / 1000
     aram = ram[4] / 1024 ** 2 / 1000
-elif MeasureOfMemory == "mb":
+elif MeasureOfMemory.lower() == "mb":
     tram = ram[0] / 1024 ** 2
     aram = ram[4] / 1024 ** 2
 

@@ -1,12 +1,10 @@
 {
 
 "colors" :{
-    "titleColor": "white",
-    "infoColor": "white",
+    "titleColor": "red",
+    "infoColor": "pink",
     "logoColor": "green"},
 
 "config": {
-    "MeasureOfMemory": "mb"
-}
-
-}
+   "MeasureOfMemory": "gb"
+}}
